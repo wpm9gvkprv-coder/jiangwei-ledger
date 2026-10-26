@@ -11,8 +11,8 @@ import java.time.format.DateTimeParseException;
 import java.util.*;
 @Service
 public class LedgerService {
- private final CategoryMapper categories;private final BillMapper bills;private final BudgetMapper budgets;
- public LedgerService(CategoryMapper categories,BillMapper bills,BudgetMapper budgets){this.categories=categories;this.bills=bills;this.budgets=budgets;}
+ private final IntelligenceService smart; private final UserMapper users; private final CategoryMapper categories;private final BillMapper bills;private final BudgetMapper budgets;
+ public LedgerService(CategoryMapper categories,BillMapper bills,BudgetMapper budgets,IntelligenceService smart,UserMapper users){this.smart=smart;this.users=users;this.categories=categories;this.bills=bills;this.budgets=budgets;}
  public List<Category> categories(Long uid){return categories.selectList(new QueryWrapper<Category>().and(q->q.isNull("user_id").or().eq("user_id",uid)).orderByAsc("id"));}
  public Category category(Long uid,Long id){var c=categories.selectById(id);if(c==null||(c.getUserId()!=null&&!c.getUserId().equals(uid)))throw BusinessException.missing();return c;}
  public Category saveCategory(Long uid,Long id,Requests.CategoryInput in){
@@ -26,11 +26,11 @@ public class LedgerService {
  public void deleteCategory(Long uid,Long id){var c=category(uid,id);if(c.getUserId()==null)throw new BusinessException(403,"默认分类不可删除");if(bills.selectCount(new QueryWrapper<Bill>().eq("category_id",id))>0)throw new BusinessException(409,"该分类仍有关联账单");categories.deleteById(id);}
  public Bill bill(Long uid,Long id){var b=bills.selectOne(new QueryWrapper<Bill>().eq("id",id).eq("user_id",uid));if(b==null)throw BusinessException.missing();return b;}
  @Transactional public Bill saveBill(Long uid,Long id,Requests.BillInput in){
-  Category c=category(uid,in.categoryId());if(!c.getType().equals(in.type()))throw new BusinessException(400,"账单与分类收支类型不一致");
+  users.lockUser(uid);Category c=category(uid,in.categoryId());if(!c.getType().equals(in.type()))throw new BusinessException(400,"账单与分类收支类型不一致");
   Bill b=id==null?new Bill():bill(uid,id);b.setUserId(uid);b.setCategoryId(in.categoryId());b.setType(in.type());b.setAmount(in.amount());b.setBillDate(in.billDate());b.setDescription(in.description().trim());
-  if(id==null)bills.insert(b);else bills.updateById(b);return b;
+  if(id==null)bills.insert(b);else bills.updateById(b);smart.rebuild(uid);return b;
  }
- @Transactional public void deleteBill(Long uid,Long id){bill(uid,id);bills.deleteById(id);}
+ @Transactional public void deleteBill(Long uid,Long id){users.lockUser(uid);bill(uid,id);bills.deleteById(id);smart.rebuild(uid);}
  public Map<String,Object> listBills(Long uid,int page,int size,String type,Long categoryId,LocalDate from,LocalDate to,String keyword){
   if(page<1||page>1000000||size<1||size>100)throw new BusinessException(400,"page须为1至1000000，size须为1至100");
   if(type!=null&&!List.of("INCOME","EXPENSE").contains(type))throw new BusinessException(400,"收支类型不合法");
