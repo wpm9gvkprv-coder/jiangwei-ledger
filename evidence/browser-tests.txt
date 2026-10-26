@@ -1,0 +1,17 @@
+
+Running 10 tests using 1 worker
+
+(node:37188) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\ledger.spec.js:78:1 › 注册与空账本、未登录路由控制 (2.1s)
+  ok  2 tests\e2e\ledger.spec.js:94:1 › 真实数据的总览、三类图表、预算和异常详情 (4.5s)
+  ok  3 tests\e2e\ledger.spec.js:138:1 › 账单校验、智能推荐确认、编辑筛选和删除 (5.2s)
+  ok  4 tests\e2e\ledger.spec.js:170:1 › 自定义分类增改删与默认分类保护 (4.8s)
+  ok  5 tests\e2e\ledger.spec.js:189:1 › 个人信息、退出登录及服务端令牌失效 (1.1s)
+  ok  6 tests\e2e\ledger.spec.js:210:1 › 服务端登录过期统一返回登录页 (11.7s)
+  ok  7 tests\e2e\ledger.spec.js:218:1 › 请求失败提供重试并恢复 (2.0s)
+  ok  8 tests\e2e\ledger.spec.js:231:1 › 手机导航、图表缩放和表单布局 (2.6s)
+  ok  9 tests\e2e\ledger.spec.js:259:1 › 账单分页、收入筛选与日期筛选 (2.7s)
+  ok 10 tests\e2e\ledger.spec.js:288:1 › 重复分类错误及已引用分类删除保护 (3.2s)
+
+  10 passed (40.8s)
