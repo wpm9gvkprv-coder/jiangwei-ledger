@@ -1,0 +1,2 @@
+<script setup>defineProps({error:String,empty:Boolean,title:{type:String,default:'这里还没有记录'},description:{type:String,default:'记下第一笔收支，慢慢积累你的账本。'}});defineEmits(['retry'])</script>
+<template><div v-if="error" class="state-box" role="alert"><strong>暂时没有加载成功</strong><p>{{error}}</p><el-button @click="$emit('retry')">重新加载</el-button></div><div v-else-if="empty" class="state-box"><span class="empty-mark">↗</span><strong>{{title}}</strong><p>{{description}}</p><slot/></div><slot v-else/></template>
