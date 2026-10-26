@@ -1,0 +1,4 @@
+Fresh database import: 01_schema.sql -> 02_defaults.sql -> 03_demo_data.sql
+users	categories	bills	budgets	alerts
+2	7	10	1	1
+Result: PASS

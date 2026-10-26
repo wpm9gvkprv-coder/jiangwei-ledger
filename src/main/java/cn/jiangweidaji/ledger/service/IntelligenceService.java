@@ -15,6 +15,7 @@ public class IntelligenceService {
   var match=KeywordClassifier.classify(description,type);
   if(match==null)return new Suggestion("NO_MATCH",null,null,null,"未匹配关键词，请手动选择类别");
   var category=categories.selectOne(new QueryWrapper<Category>().isNull("user_id").eq("name",match.categoryName()).eq("type",type));
+  if(category==null)throw new BusinessException(409,"缺少默认分类，请检查初始化脚本");
   return new Suggestion("MATCHED",category.getId(),category.getName(),match.keyword(),"按最长关键词优先，同长度按固定规则顺序推荐；由用户确认");
  }
  private List<Bill> expenses(Long uid){return bills.selectList(new QueryWrapper<Bill>().eq("user_id",uid).eq("type","EXPENSE").orderByAsc("bill_date","id"));}

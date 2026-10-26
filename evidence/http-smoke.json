@@ -1,0 +1,199 @@
+{
+  "executedAt": "2026-10-26T12:56:38.656212+08:00",
+  "baseUrl": "http://127.0.0.1:8088",
+  "requestsPassed": 27,
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/bills",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/bills",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/bills",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/bills",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/bills",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/bills",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/bills",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/bills",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/bills",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/bills",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "GET",
+      "path": "/statistics/summary?month=2026-10",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/budgets/2026-10",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/intelligence/classify",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "GET",
+      "path": "/intelligence/bills/9/anomaly",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "GET",
+      "path": "/bills/9",
+      "expected": 404,
+      "actual": 404
+    },
+    {
+      "method": "GET",
+      "path": "/bills",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/bills/9",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "GET",
+      "path": "/alerts",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/bills/9",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "GET",
+      "path": "/alerts",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "POST",
+      "path": "/auth/logout",
+      "expected": 200,
+      "actual": 200
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "expected": 401,
+      "actual": 401
+    }
+  ],
+  "summary": {
+    "month": "2026-10",
+    "income": 1000.0,
+    "expense": 236.0,
+    "balance": 764.0
+  },
+  "budget": {
+    "month": "2026-10",
+    "spent": 236.0,
+    "amount": 200.0,
+    "usageRate": 118.0,
+    "remaining": -36.0,
+    "status": "EXCEEDED"
+  },
+  "classification": {
+    "status": "MATCHED",
+    "categoryId": 1,
+    "categoryName": "餐饮",
+    "matchedKeyword": "食堂",
+    "explanation": "按最长关键词优先，同长度按固定规则顺序推荐；由用户确认"
+  },
+  "anomaly": {
+    "status": "ANOMALY",
+    "sampleCount": 8,
+    "q1": 13.5,
+    "q3": 20.5,
+    "iqr": 7.0,
+    "upperBound": 31.0
+  },
+  "note": "人工构造数据；不保存认证令牌。"
+}

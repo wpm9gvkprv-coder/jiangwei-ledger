@@ -1,0 +1,102 @@
+{
+  "h2": {
+    "tests": 23,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "cn.jiangweidaji.ledger.AlgorithmTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": "0.143",
+        "cases": [
+          "unmatchedAndIncomeIsolation",
+          "longestKeywordAndStableTie",
+          "iqrKnownExampleAndExactBoundary",
+          "expiredTokensRejected",
+          "equalHistoryAndDecimalPrecision",
+          "insufficientSamplesNeverFlag"
+        ]
+      },
+      {
+        "suite": "cn.jiangweidaji.ledger.ApiIntegrationTest",
+        "tests": 17,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": "7.501",
+        "cases": [
+          "classifierApiSupportsMatchAndNoMatch",
+          "categoryRenameAndDeleteUnused",
+          "missingInvalidAndRevokedTokensRejected",
+          "defaultAndCustomCategoryRules",
+          "historicalDeletionRebuildsAlerts",
+          "invalidAmountsDatesTypesAndPaginationRejected",
+          "corsAllowsConfiguredFrontendOnly",
+          "statisticsTotalsCategoryPercentagesAndEmptyMonths",
+          "authenticationProfileAndPasswordStorage",
+          "crossUserBillReadWriteAndListsBlocked",
+          "billCrudPaginationAndFilters",
+          "budgetBoundariesNotSetAndUserIsolation",
+          "malformedJsonAndInjectionLikeKeywordDoNotChangeData",
+          "anomalyLifecycleReadAndCrossUserAccess",
+          "invalidMonthAndTrendRangeRejected",
+          "windowAndFutureRecordsExcluded",
+          "duplicateRegistrationAndPasswordValidation"
+        ]
+      }
+    ]
+  },
+  "mysql": {
+    "tests": 23,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "cn.jiangweidaji.ledger.AlgorithmTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": "0.141",
+        "cases": [
+          "unmatchedAndIncomeIsolation",
+          "longestKeywordAndStableTie",
+          "iqrKnownExampleAndExactBoundary",
+          "expiredTokensRejected",
+          "equalHistoryAndDecimalPrecision",
+          "insufficientSamplesNeverFlag"
+        ]
+      },
+      {
+        "suite": "cn.jiangweidaji.ledger.ApiIntegrationTest",
+        "tests": 17,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": "8.037",
+        "cases": [
+          "classifierApiSupportsMatchAndNoMatch",
+          "categoryRenameAndDeleteUnused",
+          "missingInvalidAndRevokedTokensRejected",
+          "defaultAndCustomCategoryRules",
+          "historicalDeletionRebuildsAlerts",
+          "invalidAmountsDatesTypesAndPaginationRejected",
+          "corsAllowsConfiguredFrontendOnly",
+          "statisticsTotalsCategoryPercentagesAndEmptyMonths",
+          "authenticationProfileAndPasswordStorage",
+          "crossUserBillReadWriteAndListsBlocked",
+          "billCrudPaginationAndFilters",
+          "budgetBoundariesNotSetAndUserIsolation",
+          "malformedJsonAndInjectionLikeKeywordDoNotChangeData",
+          "anomalyLifecycleReadAndCrossUserAccess",
+          "invalidMonthAndTrendRangeRejected",
+          "windowAndFutureRecordsExcluded",
+          "duplicateRegistrationAndPasswordValidation"
+        ]
+      }
+    ]
+  }
+}

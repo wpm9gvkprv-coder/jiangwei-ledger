@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="cn.jiangweidaji.ledger.ApiIntegrationTest" time="8.037" tests="17" errors="0" skipped="0" failures="0">
+  <testcase name="classifierApiSupportsMatchAndNoMatch" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="1.239">
+    </testcase>
+  <testcase name="categoryRenameAndDeleteUnused" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.247" />
+  <testcase name="missingInvalidAndRevokedTokensRejected" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.328" />
+  <testcase name="defaultAndCustomCategoryRules" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.266" />
+  <testcase name="historicalDeletionRebuildsAlerts" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.275" />
+  <testcase name="invalidAmountsDatesTypesAndPaginationRejected" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.256" />
+  <testcase name="corsAllowsConfiguredFrontendOnly" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.215" />
+  <testcase name="statisticsTotalsCategoryPercentagesAndEmptyMonths" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.228" />
+  <testcase name="authenticationProfileAndPasswordStorage" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.262" />
+  <testcase name="crossUserBillReadWriteAndListsBlocked" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.222" />
+  <testcase name="billCrudPaginationAndFilters" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.234" />
+  <testcase name="budgetBoundariesNotSetAndUserIsolation" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.25" />
+  <testcase name="malformedJsonAndInjectionLikeKeywordDoNotChangeData" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.248" />
+  <testcase name="anomalyLifecycleReadAndCrossUserAccess" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.262" />
+  <testcase name="invalidMonthAndTrendRangeRejected" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.214" />
+  <testcase name="windowAndFutureRecordsExcluded" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.229" />
+  <testcase name="duplicateRegistrationAndPasswordValidation" classname="cn.jiangweidaji.ledger.ApiIntegrationTest" time="0.203" />
+</testsuite>

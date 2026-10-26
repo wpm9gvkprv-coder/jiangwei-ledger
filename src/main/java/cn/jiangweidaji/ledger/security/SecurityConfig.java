@@ -25,7 +25,7 @@ public class SecurityConfig {
     .accessDeniedHandler((req,res,e)->{res.setStatus(403);res.setContentType("application/json;charset=UTF-8");res.getWriter().write("{\"code\":403,\"message\":\"无访问权限\",\"data\":null}");}))
    .addFilterBefore(filter,UsernamePasswordAuthenticationFilter.class).build();
  }
- @Bean CorsConfigurationSource cors(@Value("${app.cors-origins}") String origins){
+ @Bean CorsConfigurationSource corsConfigurationSource(@Value("${app.cors-origins}") String origins){
   var cfg=new CorsConfiguration();cfg.setAllowedOrigins(Arrays.asList(origins.split(",")));
   cfg.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));cfg.setAllowedHeaders(List.of("Authorization","Content-Type"));cfg.setMaxAge(3600L);
   var source=new UrlBasedCorsConfigurationSource();source.registerCorsConfiguration("/api/**",cfg);return source;
